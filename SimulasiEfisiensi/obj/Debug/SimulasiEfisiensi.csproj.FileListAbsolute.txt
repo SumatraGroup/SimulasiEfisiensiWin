@@ -1,0 +1,17 @@
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Debug\SimulasiEfisiensi.exe.config
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Debug\SimulasiEfisiensi.exe
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Debug\SimulasiEfisiensi.pdb
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi.csprojResolveAssemblyReference.cache
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\MainWindow.baml
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\MainWindow.g.cs
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\App.g.cs
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi_MarkupCompile.cache
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi.g.resources
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi.Properties.Resources.resources
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi.csproj.GenerateResource.Cache
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi.exe
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi.pdb
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Debug\SimulasiEfisiensi.exe.manifest
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Debug\SimulasiEfisiensi.application
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi.exe.manifest
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Debug\SimulasiEfisiensi.application

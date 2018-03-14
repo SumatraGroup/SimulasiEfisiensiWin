@@ -1,0 +1,346 @@
+﻿<Window x:Class="SimulasiEfisiensi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Simulasi Efisiensi" Height="720" Width="1280" Icon="icon.bmp">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="565*"/>
+            <ColumnDefinition Width="636*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Center" Height="689" Margin="-2,0,0,0" VerticalAlignment="Center" Width="1274" Grid.ColumnSpan="5">
+            <TabItem Header="PLTD">
+                <Grid Background="White">
+                    <Grid.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.25" ScaleY="1.25"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.LayoutTransform>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Daya Terpasang" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Height="22" Width="92" FontSize="9"/>
+                    <Label Content="Specific Fuel Consumption (SFC)" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="22" Width="200" FontSize="9"/>
+                    <Label Content="Capacity Factor" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Height="22" Width="101" FontSize="9"/>
+                    <Label Content="Pemakaian Rata-Rata per Tahun" HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="22" Width="162" FontSize="9"/>
+                    <Label Content="1 Drum Omstar DX1 55 US Galon" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Rasio Campuran DX1/Fuel" HorizontalAlignment="Left" Margin="0,206,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Kebutuhan Omstar DX1 per Tahun" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Dalam Bentuk Drum" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Harga Omstar per Drum" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Proyeksi Saving BBM Pakai DX1" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Proyeksi Benefit Pelanggan" HorizontalAlignment="Left" Margin="0,350,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9" FontWeight="Bold"/>
+                    <Label Content="Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,372,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Harga BBM" HorizontalAlignment="Left" Margin="0,394,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Gross Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <Label Content="Biaya Pemakaian DX1" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <Label Content="Net Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <TextBox x:Name="txtDayaTerpasang" HorizontalAlignment="Left" Height="23" Margin="255,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunPLTD_TextChanged"/>
+                    <TextBox x:Name="txtSFC" HorizontalAlignment="Left" Height="23" Margin="255,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="White" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunPLTD_TextChanged"/>
+                    <TextBox x:Name="txtCapacityFactor" HorizontalAlignment="Left" Height="23" Margin="255,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunPLTD_TextChanged"/>
+                    <TextBox x:Name="txtPemakaianRata2PLTD" HorizontalAlignment="Left" Height="23" Margin="255,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtDrumOmstarPLTD" HorizontalAlignment="Left" Height="23" Margin="255,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtRasioCampuranPLTD" HorizontalAlignment="Left" Height="23" Margin="255,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtKebutuhanOmstarTahunPLTD" HorizontalAlignment="Left" Height="23" Margin="255,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtDalamBentukDrumPLTD" HorizontalAlignment="Left" Height="23" Margin="255,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtHargaOmstarPLTD" HorizontalAlignment="Left" Height="23" Margin="255,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" KeyUp="txtHargaOmstarPLTD_KeyUp" TextChanged="CalculateNetSavingPLTD_TextChanged"/>
+                    <TextBox x:Name="txtProyeksiSavingPLTD" HorizontalAlignment="Left" Height="23" Margin="255,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="CalculateNetSavingPLTD_TextChanged"/>
+                    <TextBox x:Name="txtSavingCustomerTahunPLTD" HorizontalAlignment="Left" Height="23" Margin="255,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtHargaBBMPLTD" HorizontalAlignment="Left" Height="23" Margin="255,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="CalculateNetSavingPLTD_TextChanged" KeyUp="txtHargaBBMPLTD_KeyUp"/>
+                    <TextBox x:Name="txtGrossSavingCustomerTahunPLTD" HorizontalAlignment="Left" Height="23" Margin="255,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtBiayaPemakaianDX1PLTD" HorizontalAlignment="Left" Height="23" Margin="255,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtNetSavingCustomerTahunPLTD" HorizontalAlignment="Left" Height="23" Margin="255,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <Label Content="SIMULASI PEMBANGKIT LISTRIK TENAGA DIESEL" Margin="363,65,0,0" VerticalAlignment="Top" Width="288" FontWeight="Bold" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="26"/>
+                    <Label Content="MW" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="L/KWh" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="%(Adanya Pemeliharaan dan Gangguan)" HorizontalAlignment="Right" Margin="0,140,72,0" VerticalAlignment="Top" Height="22" Width="182" FontSize="9" Grid.Column="1"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="22" Width="212" FontSize="9" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="RASIO 1:1280" HorizontalAlignment="Left" Margin="0,205,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="DRUM" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,372,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="RP/LITER" HorizontalAlignment="Left" Margin="0,394,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Label Content="Neither Seller nor the Company, nor any Person on behalf of either of them, makes or has made, and Seller expressly disclaims, any direct or indirect representation of warranty with respect to the accuracy  or completeness of any information, &#xD;&#xA;written oral or in any other format, which has been made available, or is made available." HorizontalAlignment="Left" Margin="0,505,0,0" VerticalAlignment="Top" Width="559" FontSize="5" Grid.ColumnSpan="2"/>
+                    <Label Content="%" HorizontalAlignment="Left" Margin="0,293,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="1"/>
+                    <Button x:Name="btnResetPLTD" Content="Reset" Grid.Column="2" HorizontalAlignment="Left" Margin="0,462,0,0" VerticalAlignment="Top" Width="75" Click="btnResetPLTD_Click"/>
+                    <Label Content="v 1.0" Grid.Column="2" HorizontalAlignment="Left" Margin="229,509,0,0" VerticalAlignment="Top" FontSize="7"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TRANSPORTASI DARAT">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="Snow" Offset="1"/>
+                        <GradientStop Color="#FFF4F2F2" Offset="1"/>
+                        <GradientStop Color="#FFFDF9F9" Offset="1"/>
+                        <GradientStop Color="#FFFDF9F9" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White" Margin="0,-3,0,0">
+                    <Grid.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.25" ScaleY="1.25"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.LayoutTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Jumlah Armada" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Height="22" Width="92" FontSize="9"/>
+                    <Label Content="Jauh Perjalanan Rata-Rata per Hari" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="22" Width="200" FontSize="9" Grid.ColumnSpan="2"/>
+                    <Label Content="Rasio Pemakaian BBM" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Height="22" Width="101" FontSize="9"/>
+                    <Label Content="Rata-Rata Faktor Kerja" HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="22" Width="101" FontSize="9"/>
+                    <Label Content="Rata-Rata Pemakaian BBM per Tahun" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="1 Drum Omstar DX1 55 US Galon" HorizontalAlignment="Left" Margin="0,206,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Rasio Campuran DX1/Fuel" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Kebutuhan Omstar DX1 per Tahun" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Dalam Bentuk Drum" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Harga Omstar per Drum" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Proyeksi Saving BBM Pakai DX1" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Proyeksi Benefit Pelanggan" HorizontalAlignment="Left" Margin="0,350,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9" FontWeight="Bold"/>
+                    <Label Content="Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,372,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Harga BBM" HorizontalAlignment="Left" Margin="0,394,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Gross Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <Label Content="Biaya Pemakaian DX1" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <Label Content="Net Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <TextBox x:Name="txtJmlArmada" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextChanged="countRata2PemakaianBBMTahunDarat_TextChanged" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown"/>
+                    <TextBox x:Name="txtJauhPerjalananRata2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunDarat_TextChanged"/>
+                    <TextBox x:Name="txtRasioPemakaianBBM" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunDarat_TextChanged"/>
+                    <TextBox x:Name="txtRata2FaktorKerja" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunDarat_TextChanged"/>
+                    <TextBox x:Name="txtRata2PemakaianBBMTahun" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtDrumOmstar" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtRasioCampuran" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtKebutuhanOmstarTahun" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtDalamBentukDrum" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtHargaOmstar" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingDarat_TextChanged" KeyUp="txtHargaOmstar_KeyUp"/>
+                    <TextBox x:Name="txtProyeksiSavingBBM" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingDarat_TextChanged"/>
+                    <TextBox x:Name="txtSavingCustomerTahun" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtHargaBBM" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingDarat_TextChanged" KeyUp="txtHargaBBM_KeyUp"/>
+                    <TextBox x:Name="txtGrossSavingCustomerTahun" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtBiayaPemakaianDX1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtNetSavingCustomerTahun" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <Label Content="SIMULASI TRANSPORTASI DARAT" Grid.Column="1" Margin="153,64,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="200" FontWeight="Bold" HorizontalAlignment="Left"/>
+                    <Label Content="UNIT" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="KM" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="KM/LITER" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="%(Standby Boarding, Gangguan, Pemeliharaan Rutin" HorizontalAlignment="Left" Margin="5,162,0,0" VerticalAlignment="Top" Height="22" Width="239" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,205,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RASIO 1:1280" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="DRUM" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,372,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP/LITER" HorizontalAlignment="Left" Margin="0,394,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="Neither Seller nor the Company, nor any Person on behalf of either of them, makes or has made, and Seller expressly disclaims, any direct or indirect representation of warranty with respect to the accuracy  or completeness of any information, &#xA;written oral or in any other format, which has been made available, or is made available." HorizontalAlignment="Left" Margin="0,505,0,0" VerticalAlignment="Top" Width="559" FontSize="5" Grid.ColumnSpan="3"/>
+                    <Label Content="%" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Button x:Name="btnResetDarat" Content="Reset" Grid.Column="3" HorizontalAlignment="Left" Margin="0,462,0,0" VerticalAlignment="Top" Width="75" Click="btnResetDarat_Click"/>
+                    <Label Content="v 1.0" Grid.Column="3" HorizontalAlignment="Left" Margin="229,509,0,0" VerticalAlignment="Top" FontSize="7"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TRANSPORTASI LAUT" Margin="-2,-2,-2,0">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="Snow" Offset="1"/>
+                        <GradientStop Color="#FFF4F2F2" Offset="1"/>
+                        <GradientStop Color="#FFFDF9F9" Offset="1"/>
+                        <GradientStop Color="#FFFDF9F9" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White">
+                    <Grid.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.25" ScaleY="1.25"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.LayoutTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Jumlah Armada" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Height="22" Width="92" FontSize="9"/>
+                    <Label Content="Daya Mesin" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="22" Width="200" FontSize="9" Grid.ColumnSpan="2"/>
+                    <Label Content="Specific Fuel Consumption (SFC)" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Height="22" Width="140" FontSize="9"/>
+                    <Label Content="Capacity Factor" HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="22" Width="101" FontSize="9"/>
+                    <Label Content="Pemakaian Rata-Rata per Tahun" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="1 Drum Omstar DX1 55 US Galon" HorizontalAlignment="Left" Margin="0,206,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Rasio Campuran DX1/Fuel" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Kebutuhan Omstar DX1 per Tahun" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Dalam Bentuk Drum" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Harga Omstar per Drum" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Proyeksi Saving BBM Pakai DX1" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Proyeksi Benefit Pelanggan" HorizontalAlignment="Left" Margin="0,350,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9" FontWeight="Bold"/>
+                    <Label Content="Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,372,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Harga BBM" HorizontalAlignment="Left" Margin="0,394,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Gross Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <Label Content="Harga Pemakaian DX1" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <Label Content="Net Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <TextBox x:Name="txtJmlArmadaLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextChanged="countRata2PemakaianBBMTahunLaut_TextChanged" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown"/>
+                    <TextBox x:Name="txtDayaMesinLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunLaut_TextChanged"/>
+                    <TextBox x:Name="txtSFCLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" Background="White" TextChanged="countRata2PemakaianBBMTahunLaut_TextChanged"/>
+                    <TextBox x:Name="txtCapacityFactorLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunLaut_TextChanged"/>
+                    <TextBox x:Name="txtPemakaianRata2TahunLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtDrumOmstarLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtRasioCampuranLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtKebutuhanOmstarTahunLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtDalamBentukDrumLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtHargaOmstarLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingLaut_TextChanged" KeyUp="txtHargaOmstarLaut_KeyUp"/>
+                    <TextBox x:Name="txtProyeksiSavingBBMLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingLaut_TextChanged"/>
+                    <TextBox x:Name="txtSavingCustomerTahunLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtHargaBBMLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingLaut_TextChanged" KeyUp="txtHargaBBMLaut_KeyUp"/>
+                    <TextBox x:Name="txtGrossSavingCustomerTahunLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtHargaPemakaianDX1Laut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtNetSavingCustomerTahunLaut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <Label Content="SIMULASI KAPAL LAUT" Grid.Column="1" Margin="181,65,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="144" FontWeight="Bold" HorizontalAlignment="Left"/>
+                    <Label Content="BH" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="MW" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="L/KWh" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="%(Karena Docking, Gangguan, dan Waktu Sandar di Pelabuhan)" HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="22" Width="279" FontSize="9" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,205,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RASIO 1:1280" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="DRUM" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,372,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP/LITER" HorizontalAlignment="Left" Margin="0,394,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="Neither Seller nor the Company, nor any Person on behalf of either of them, makes or has made, and Seller expressly disclaims, any direct or indirect representation of warranty with respect to the accuracy  or completeness of any information, &#xA;written oral or in any other format, which has been made available, or is made available." HorizontalAlignment="Left" Margin="0,505,0,0" VerticalAlignment="Top" Width="559" FontSize="5" Grid.ColumnSpan="3"/>
+                    <Label Content="%" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Button x:Name="btnResetLaut" Content="Reset" Grid.Column="3" HorizontalAlignment="Left" Margin="0,462,0,0" VerticalAlignment="Top" Width="75" Click="btnResetLaut_Click"/>
+                    <Label Content="v 1.0" Grid.Column="3" HorizontalAlignment="Left" Margin="229,509,0,0" VerticalAlignment="Top" FontSize="7"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="LOKOMOTIF" Margin="-2,-2,-2,0">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="Snow" Offset="1"/>
+                        <GradientStop Color="#FFF4F2F2" Offset="1"/>
+                        <GradientStop Color="#FFFDF9F9" Offset="1"/>
+                        <GradientStop Color="#FFFDF9F9" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White">
+                    <Grid.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.25" ScaleY="1.25"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.LayoutTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Jumlah Armada" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Height="22" Width="92" FontSize="9"/>
+                    <Label Content="Daya Mesin" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="22" Width="200" FontSize="9" Grid.ColumnSpan="2"/>
+                    <Label Content="Specific Fuel Consumption (SFC)" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Height="22" Width="140" FontSize="9"/>
+                    <Label Content="Capacity Factor" HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="22" Width="101" FontSize="9"/>
+                    <Label Content="Pemakaian Rata-Rata per Tahun" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="1 Drum Omstar DX1 55 US Galon" HorizontalAlignment="Left" Margin="0,206,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Rasio Campuran DX1/Fuel" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Kebutuhan Omstar DX1 per Tahun" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Dalam Bentuk Drum" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Harga Omstar per Drum" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Proyeksi Saving BBM Pakai DX1" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Proyeksi Benefit Pelanggan" HorizontalAlignment="Left" Margin="0,350,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9" FontWeight="Bold"/>
+                    <Label Content="Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,372,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Harga BBM" HorizontalAlignment="Left" Margin="0,394,0,0" VerticalAlignment="Top" Height="22" Width="157" FontSize="9"/>
+                    <Label Content="Gross Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <Label Content="Harga Pemakaian DX1" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <Label Content="Net Saving Bagi Customer per Tahun" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Height="22" Width="166" FontSize="9"/>
+                    <TextBox x:Name="txtJmlArmadaLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextChanged="countRata2PemakaianBBMTahunLokomotif_TextChanged" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown"/>
+                    <TextBox x:Name="txtDayaMesinLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunLokomotif_TextChanged"/>
+                    <TextBox x:Name="txtSFCLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" Background="White" TextChanged="countRata2PemakaianBBMTahunLokomotif_TextChanged"/>
+                    <TextBox x:Name="txtCapacityFactorLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="countRata2PemakaianBBMTahunLokomotif_TextChanged"/>
+                    <TextBox x:Name="txtPemakaianRata2TahunLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtDrumOmstarLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtRasioCampuranLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtKebutuhanOmstarTahunLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtDalamBentukDrumLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" IsReadOnly="True" Background="#FFD4D4D4"/>
+                    <TextBox x:Name="txtHargaOmstarLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingLokomotif_TextChanged" KeyUp="txtHargaOmstarLokomotif_KeyUp"/>
+                    <TextBox x:Name="txtProyeksiSavingBBMLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingLokomotif_TextChanged"/>
+                    <TextBox x:Name="txtSavingCustomerTahunLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtHargaBBMLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" KeyDown="txtCharFilter_KeyDown" TextChanged="calculateNetSavingLokomotif_TextChanged" KeyUp="txtHargaBBMLokomotif_KeyUp"/>
+                    <TextBox x:Name="txtGrossSavingCustomerTahunLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtHargaPemakaianDX1Lokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <TextBox x:Name="txtNetSavingCustomerTahunLokomotif" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextAlignment="Right" Background="#FFD4D4D4" IsReadOnly="True"/>
+                    <Label Content="SIMULASI LOKOMOTIF" Grid.Column="1" Margin="183,65,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="141" FontWeight="Bold" HorizontalAlignment="Left"/>
+                    <Label Content="UNIT" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="MW" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="L/KWh" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="%(Karena Gangguan, Pemeliharaan, Stop Boarding di Stasiun)" HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="22" Width="257" FontSize="9" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,205,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RASIO 1:1280" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="DRUM" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="LITER" HorizontalAlignment="Left" Margin="0,372,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP/LITER" HorizontalAlignment="Left" Margin="0,394,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="RP" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Label Content="Neither Seller nor the Company, nor any Person on behalf of either of them, makes or has made, and Seller expressly disclaims, any direct or indirect representation of warranty with respect to the accuracy  or completeness of any information, &#xA;written oral or in any other format, which has been made available, or is made available." HorizontalAlignment="Left" Margin="0,505,0,0" VerticalAlignment="Top" Width="559" FontSize="5" Grid.ColumnSpan="3"/>
+                    <Label Content="%" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="22" Width="167" FontSize="9" Grid.Column="2"/>
+                    <Button x:Name="btnResetLokomotif" Content="Reset" Grid.Column="3" HorizontalAlignment="Left" Margin="0,462,0,0" VerticalAlignment="Top" Width="75" Click="btnResetLokomotif_Click"/>
+                    <Label Content="v 1.0" Grid.Column="3" HorizontalAlignment="Left" Margin="229,509,0,0" VerticalAlignment="Top" FontSize="7"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Image Margin="332,11,403,572" Source="header.bmp" Stretch="None" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3">
+            <Image.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.LayoutTransform>
+        </Image>
+    </Grid>
+</Window>

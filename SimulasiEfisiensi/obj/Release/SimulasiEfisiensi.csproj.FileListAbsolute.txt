@@ -1,0 +1,16 @@
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Release\SimulasiEfisiensi.exe.config
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Release\SimulasiEfisiensi.exe
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Release\SimulasiEfisiensi.pdb
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\MainWindow.baml
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\MainWindow.g.cs
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\App.g.cs
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi_MarkupCompile.cache
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.g.resources
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.Properties.Resources.resources
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.csproj.GenerateResource.Cache
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.exe
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.pdb
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Release\SimulasiEfisiensi.exe.manifest
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Release\SimulasiEfisiensi.application
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.exe.manifest
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.application
