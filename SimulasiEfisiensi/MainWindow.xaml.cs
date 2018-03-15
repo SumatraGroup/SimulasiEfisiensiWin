@@ -25,6 +25,7 @@ namespace SimulasiEfisiensi
         private double drumOmstar, rasioCampuran, kebutuhanOmstar, dalamDrum, savingCustomer, grossSaving, biayaPemakaian, netSaving, rata2PemakaianBBMTahun;
         private double SFCLaut, pemakaianRata2TahunLaut, drumOmstarLaut, rasioCampuranLaut, kebutuhanOmstarLaut, dalamDrumLaut, savingCustomerLaut, grossSavingLaut, hargaPemakaianLaut, netSavingLaut;
         private double SFCLokomotif, pemakaianRata2TahunLokomotif, drumOmstarLokomotif, rasioCampuranLokomotif, kebutuhanOmstarLokomotif, dalamDrumLokomotif, savingCustomerLokomotif, grossSavingLokomotif, hargaPemakaianLokomotif, netSavingLokomotif;
+        private string[] str;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +41,8 @@ namespace SimulasiEfisiensi
 
             //LOKOMOTIF
             initializeLokomotif();
+
+            str = new string[20];
         }
 
         private void initializeLokomotif()
@@ -504,6 +507,107 @@ namespace SimulasiEfisiensi
         private void btnResetLokomotif_Click(object sender, RoutedEventArgs e)
         {
             initializeLokomotif();
+        }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            exportToTxt();
+        }
+
+        private void exportToTxt()
+        {
+            if (tabPLTD.IsSelected) {
+                str[0] = "Simulasi Pembangkit Listrik Tenaga Diesel";
+                str[1] = lblDayaTerpasang.Content + " " + txtDayaTerpasang.Text + " MW";
+                str[2] = lblSFCPLTD.Content + " " + txtSFC.Text + " L/KWh";
+                str[3] = lblCapFactorPLTD.Content + " " + txtCapacityFactor.Text + "% (Adanya Pemeliharaan dan Gangguan)";
+                str[4] = lblPemakaianRata2TahunPLTD.Content + " " + txtPemakaianRata2PLTD.Text + " LITER";
+                str[5] = lblDrumOmstarPLTD.Content + " " + txtDrumOmstarPLTD.Text + " LITER";
+                str[6] = lblRasioPLTD.Content + " " + txtRasioCampuranPLTD.Text + " (Rasio 1:1280)";
+                str[7] = lblKebutuhanOmstarPLTD.Content + " " + txtKebutuhanOmstarTahunPLTD.Text + " LITER";
+                str[8] = lblDalamDrumPLTD.Content + " " + txtDalamBentukDrumPLTD.Text + " Drum";
+                str[9] = lblHargaOmstarPLTD.Content + " Rp " + txtHargaOmstarPLTD.Text;
+                str[10] = lblProyeksiSavingPLTD.Content + " " + txtProyeksiSavingPLTD.Text + "%";
+                str[11] = "";
+                str[12] = "Proyeksi Benefit Pelanggan";
+                str[13] = lblSavingCustPLTD.Content + " " + txtSavingCustomerTahunPLTD.Text + " LITER";
+                str[14] = lblHargaBBMPLTD.Content + " " + txtHargaBBMPLTD.Text + " RP/LITER";
+                str[15] = lblGrossSavingPLTD.Content + " Rp " + txtGrossSavingCustomerTahunPLTD.Text;
+                str[16] = lblBiayaPemakaianPLTD.Content + " Rp " + txtBiayaPemakaianDX1PLTD.Text;
+                str[17] = lblNetSavingPLTD.Content + " Rp " + txtNetSavingCustomerTahunPLTD.Text;
+
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + @"\ExportPLTD.txt", str);
+            }
+            else if (tabDarat.IsSelected) {
+                str[0] = "Simulasi Transportasi Darat";
+                str[1] = lblJmlArmadaDarat.Content + " " + txtJmlArmada.Text + " UNIT";
+                str[2] = lblJauhPerjalananDarat.Content + " " + txtJauhPerjalananRata2.Text + " KM";
+                str[3] = lblRasioPemakaianBBMDarat.Content + " " + txtRasioPemakaianBBM.Text + " KM/LITER";
+                str[4] = lblRata2FaktorKerjaDarat.Content + " " + txtRata2FaktorKerja.Text + "% (Adanya Pemeliharaan dan Gangguan)";
+                str[5] = lblRata2PemakaianBBMDarat.Content + " " + txtRata2PemakaianBBMTahun.Text + " LITER";
+                str[6] = lblDrumOmstarDarat.Content + " " + txtDrumOmstar.Text + " LITER";
+                str[7] = lblRasioDarat.Content + " " + txtRasioCampuran.Text + " (Rasio 1:1280)";
+                str[8] = lblKebutuhanOmstarDarat.Content + " " + txtKebutuhanOmstarTahun.Text + " LITER";
+                str[9] = lblDalamDrumDarat.Content + " " + txtDalamBentukDrum.Text + " Drum";
+                str[10] = lblHargaOmstarDarat.Content + " Rp " + txtHargaOmstar.Text;
+                str[11] = lblProyeksiSavingDarat.Content + " " + txtProyeksiSavingBBM.Text + "%";
+                str[12] = "";
+                str[13] = "Proyeksi Benefit Pelanggan";
+                str[14] = lblSavingCustDarat.Content + " " + txtSavingCustomerTahun.Text + " LITER";
+                str[15] = lblHargaBBMDarat.Content + " " + txtHargaBBM.Text + " RP/LITER";
+                str[16] = lblGrossSavingDarat.Content + " Rp " + txtGrossSavingCustomerTahun.Text;
+                str[17] = lblBiayaPemakaianDarat.Content + " Rp " + txtBiayaPemakaianDX1.Text;
+                str[18] = lblNetSavingDarat.Content + " Rp " + txtNetSavingCustomerTahun.Text;
+
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + @"\ExportDarat.txt", str);
+            }
+            else if (tabLaut.IsSelected) {
+                str[0] = "Simulasi Kapal Laut";
+                str[1] = lblJmlArmadaLaut.Content + " " + txtJmlArmadaLaut.Text + " BH";
+                str[2] = lblDayaMesinLaut.Content + " " + txtDayaMesinLaut.Text + " MW";
+                str[3] = lblSFCLaut.Content + " " + txtSFCLaut.Text + " L/KWh";
+                str[4] = lblCapFactorLaut.Content + " " + txtCapacityFactorLaut.Text + "% (Karena Docking, Gangguan, dan Waktu Sandar di Pelabuhan)";
+                str[5] = lblPemakaianRata2Laut.Content + " " + txtPemakaianRata2TahunLaut.Text + " LITER";
+                str[6] = lblDrumOmstarLaut.Content + " " + txtDrumOmstarLaut.Text + " LITER";
+                str[7] = lblRasioLaut.Content + " " + txtRasioCampuranLaut.Text + " (Rasio 1:1280)";
+                str[8] = lblKebutuhanOmstarLaut.Content + " " + txtKebutuhanOmstarTahunLaut.Text + " LITER";
+                str[9] = lblDalamDrumLaut.Content + " " + txtDalamBentukDrumLaut.Text + " Drum";
+                str[10] = lblHargaOmstarLaut.Content + " Rp " + txtHargaOmstarLaut.Text;
+                str[11] = lblProyeksiSavingLaut.Content + " " + txtProyeksiSavingBBMLaut.Text + "%";
+                str[12] = "";
+                str[13] = "Proyeksi Benefit Pelanggan";
+                str[14] = lblSavingCustLaut.Content + " " + txtSavingCustomerTahunLaut.Text + " LITER";
+                str[15] = lblHargaBBMLaut.Content + " " + txtHargaBBMLaut.Text + " RP/LITER";
+                str[16] = lblGrossSavingLaut.Content + " Rp " + txtGrossSavingCustomerTahunLaut.Text;
+                str[17] = lblHargaPemakaianLaut.Content + " Rp " + txtHargaPemakaianDX1Laut.Text;
+                str[18] = lblNetSavingLaut.Content + " Rp " + txtNetSavingCustomerTahunLaut.Text;
+
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + @"\ExportLaut.txt", str);
+            }
+            else if (tabLokomotif.IsSelected) {
+                str[0] = "Simulasi Lokomotif";
+                str[1] = lblJmlArmadaLokomotif.Content + " " + txtJmlArmadaLokomotif.Text + " BH";
+                str[2] = lblDayaMesinLokomotif.Content + " " + txtDayaMesinLokomotif.Text + " MW";
+                str[3] = lblSFCLokomotif.Content + " " + txtSFCLokomotif.Text + " L/KWh";
+                str[4] = lblCapFactorLokomotif.Content + " " + txtCapacityFactorLokomotif.Text + "% (Karena Docking, Gangguan, dan Waktu Sandar di Pelabuhan)";
+                str[5] = lblPemakaianRata2Lokomotif.Content + " " + txtPemakaianRata2TahunLokomotif.Text + " LITER";
+                str[6] = lblDrumOmstarLokomotif.Content + " " + txtDrumOmstarLokomotif.Text + " LITER";
+                str[7] = lblRasioLokomotif.Content + " " + txtRasioCampuranLokomotif.Text + " (Rasio 1:1280)";
+                str[8] = lblKebutuhanOmstarLokomotif.Content + " " + txtKebutuhanOmstarTahunLokomotif.Text + " LITER";
+                str[9] = lblDalamDrumLokomotif.Content + " " + txtDalamBentukDrumLokomotif.Text + " Drum";
+                str[10] = lblHargaOmstarLokomotif.Content + " Rp " + txtHargaOmstarLokomotif.Text;
+                str[11] = lblProyeksiSavingLokomotif.Content + " " + txtProyeksiSavingBBMLokomotif.Text + "%";
+                str[12] = "";
+                str[13] = "Proyeksi Benefit Pelanggan";
+                str[14] = lblSavingCustLokomotif.Content + " " + txtSavingCustomerTahunLokomotif.Text + " LITER";
+                str[15] = lblHargaBBMLokomotif.Content + " " + txtHargaBBMLokomotif.Text + " RP/LITER";
+                str[16] = lblGrossSavingLokomotif.Content + " Rp " + txtGrossSavingCustomerTahunLokomotif.Text;
+                str[17] = lblHargaPemakaianLokomotif.Content + " Rp " + txtHargaPemakaianDX1Lokomotif.Text;
+                str[18] = lblNetSavingLokomotif.Content + " Rp " + txtNetSavingCustomerTahunLokomotif.Text;
+
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + @"\ExportLokomotif.txt", str);
+            }
+            MessageBox.Show("Data Has Been Exported Successfully", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

@@ -1,0 +1,20 @@
+Simulasi Lokomotif
+Jumlah Armada 10 BH
+Daya Mesin 2.5 MW
+Specific Fuel Consumption (SFC) 0.25 L/KWh
+Capacity Factor 65% (Karena Docking, Gangguan, dan Waktu Sandar di Pelabuhan)
+Pemakaian Rata-Rata per Tahun 35,587,500 LITER
+1 Drum Omstar DX1 55 US Galon 208 LITER
+Rasio Campuran DX1/Fuel 0.00078125 (Rasio 1:1280)
+Kebutuhan Omstar DX1 per Tahun 27,803 LITER
+Dalam Bentuk Drum 133 Drum
+Harga Omstar per Drum Rp 122,762,250
+Proyeksi Saving BBM Pakai DX1 10%
+
+Proyeksi Benefit Pelanggan
+Saving Bagi Customer per Tahun 3,558,750 LITER
+Harga BBM 9,500 RP/LITER
+Gross Saving Bagi Customer per Tahun Rp 33,808,125,000
+Harga Pemakaian DX1 Rp 16,373,836,546
+Net Saving Bagi Customer per Tahun Rp 17,434,288,454
+

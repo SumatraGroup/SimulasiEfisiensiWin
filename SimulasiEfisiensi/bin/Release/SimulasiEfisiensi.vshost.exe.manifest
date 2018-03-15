@@ -4,7 +4,7 @@
   <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="SimulasiEfisiensi" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="SimulasiEfisiensi" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
     <commandLine file="SimulasiEfisiensi.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimulasiEfisiensi.exe" size="428032">
-      <assemblyIdentity name="SimulasiEfisiensi" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimulasiEfisiensi.exe" size="439808">
+      <assemblyIdentity name="SimulasiEfisiensi" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yCX26/QVh9Bpg+EOz6N0ogD0ctrWRp6k200qHXKVWFM=</dsig:DigestValue>
+        <dsig:DigestValue>gf8uutBj3llR/Bx29T3bvhmqQZ9w+qpoNvlrZWvq7pI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1,0 +1,20 @@
+Simulasi Pembangkit Listrik Tenaga Diesel
+Daya Terpasang 10 MW
+Specific Fuel Consumption (SFC) 0.25 L/KWh
+Capacity Factor 80 %(Adanya Pemeliharaan dan Gangguan)
+Pemakaian Rata-Rata per Tahun 17,520,000 LITER
+1 Drum Omstar DX1 55 US Galon 208 LITER
+Rasio Campuran DX1/Fuel 0.00078125 (Rasio 1:1280)
+Kebutuhan Omstar DX1 per Tahun 13,688 LITER
+Dalam Bentuk Drum 66 Drum
+Harga Omstar per Drum Rp 122,762,250
+Proyeksi Saving BBM Pakai DX1 10%
+
+Proyeksi Benefit Pelanggan
+Saving Bagi Customer per Tahun 1,752,000 LITER
+Harga BBM 9,500 RP/LITER
+Gross Saving Bagi Customer per Tahun Rp 16,644,000,000
+Biaya Pemakaian DX1 Rp 8,060,965,684
+Net Saving Bagi Customer per Tahun Rp 8,583,034,316
+
+

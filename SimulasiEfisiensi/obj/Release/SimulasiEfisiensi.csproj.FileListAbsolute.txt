@@ -14,3 +14,4 @@ d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\Simulasi
 d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\bin\Release\SimulasiEfisiensi.application
 d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.exe.manifest
 d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.application
+d:\users\smi-it\documents\visual studio 2012\Projects\SimulasiEfisiensi\SimulasiEfisiensi\obj\Release\SimulasiEfisiensi.csprojResolveAssemblyReference.cache
